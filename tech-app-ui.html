@@ -1,0 +1,30 @@
+<!doctype html><html lang="ja" class="scroll-smooth"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>アプリUI観察カード | YARUKI LAB</title><meta name="description" content="YARUKI LAB 情報IIプロジェクト"/><script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Noto Sans JP','Inter','system-ui','sans-serif'] },
+        colors: { ink:'#0f172a', paper:'#fffaf1', melon:'#d9f99d', soda:'#bae6fd', momo:'#ffe4e6', grape:'#ede9fe', banana:'#fef3c7' },
+        boxShadow: { soft:'0 24px 80px rgba(15,23,42,.12)', sticker:'7px 7px 0 rgba(15,23,42,.10)' }
+      }
+    }
+  }
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
+::selection{background:#fde68a;color:#111827}
+.grid-paper{background-image:linear-gradient(rgba(15,23,42,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(15,23,42,.055) 1px,transparent 1px);background-size:22px 22px}
+.marker{background:linear-gradient(transparent 58%, #fde68a 58%);}
+.pop{transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease}
+.pop:hover{transform:translateY(-5px) rotate(-.2deg);box-shadow:0 22px 70px rgba(15,23,42,.14);border-color:#fb7185}
+.tape::before{content:"";position:absolute;top:-12px;left:28px;width:74px;height:24px;background:rgba(253,186,116,.75);transform:rotate(-4deg);border-radius:4px}
+.bubble{position:relative}.bubble:after{content:"";position:absolute;left:34px;bottom:-14px;border-width:14px 12px 0 0;border-style:solid;border-color:white transparent transparent transparent}
+.codebox pre{white-space:pre-wrap;word-break:break-word}.card-gradient{background:radial-gradient(circle at top left, rgba(251,113,133,.18), transparent 34%), radial-gradient(circle at bottom right, rgba(14,165,233,.18), transparent 32%), #fff}.mermaid svg{max-width:100%;height:auto}
+.noise{background-image:radial-gradient(rgba(15,23,42,.08) 1px, transparent 1px);background-size:18px 18px}
+</style></head><body class="bg-paper text-slate-900 font-sans"><header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100"><div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between"><a href="index.html" class="flex items-center gap-3 font-black tracking-tight"><span class="w-10 h-10 rounded-2xl bg-gradient-to-br from-rose-400 via-amber-300 to-sky-400 grid place-items-center text-white shadow-sticker">✦</span><span>YARUKI LAB</span></a><nav class="hidden md:flex items-center gap-6 text-sm font-black text-slate-600"><a class="hover:text-rose-500" href="index.html">TOP</a><a class="hover:text-rose-500" href="schedule.html">10コマ</a><a class="hover:text-rose-500" href="curriculum.html">情報II</a><a class="hover:text-rose-500" href="tech-cards.html">カード</a><a class="hover:text-rose-500" href="tech-product-analysis.html">KOKUYO分析</a></nav></div></header><main>
+<section class="py-16 md:py-24 grid-paper bg-gradient-to-br from-amber-50 via-white to-sky-50"><div class="max-w-7xl mx-auto px-4 sm:px-6"><p class="font-black text-amber-600 tracking-widest">KOKUYO CARD</p><h1 class="mt-3 text-4xl md:text-6xl font-black">アプリUI観察カード</h1><p class="mt-6 max-w-4xl text-lg leading-9 text-slate-700">アプリ画面を「かわいい」「便利」で終わらせず、何を見せ、どんな行動につなげているかを読み取ります。</p></div></section>
+<section class="py-16 bg-white"><div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-3 gap-5"><div class="rounded-3xl bg-amber-50 border border-amber-100 p-7"><h2 class="font-black text-xl">最初に目に入るもの</h2><p class="mt-3 text-slate-600 leading-7">ユーザーに何を一番伝えたい画面か。</p></div><div class="rounded-3xl bg-sky-50 border border-sky-100 p-7"><h2 class="font-black text-xl">次の行動</h2><p class="mt-3 text-slate-600 leading-7">画面を見た後、ユーザーに何をしてほしいか。</p></div><div class="rounded-3xl bg-rose-50 border border-rose-100 p-7"><h2 class="font-black text-xl">続ける仕掛け</h2><p class="mt-3 text-slate-600 leading-7">キャラ、報酬、グラフ、言葉がどう効いているか。</p></div></div></section>
+<section class="py-16 bg-slate-50"><div class="max-w-7xl mx-auto px-4 sm:px-6"><h2 class="text-3xl font-black">UI観察ワーク</h2><div class="mt-6 grid lg:grid-cols-2 gap-6"><div class="rounded-3xl bg-white p-7 border border-slate-100"><h3 class="font-black text-xl">書くこと</h3><ul class="mt-4 space-y-3 text-slate-700"><li>この画面の主役は何か</li><li>数字をどのように見せているか</li><li>キャラクターや色はどんな気持ちにさせるか</li><li>高校生向けならどう変えるか</li></ul></div><div class="rounded-3xl bg-white p-7 border border-slate-100"><h3 class="font-black text-xl">YARUKI LABでの使い方</h3><p class="mt-4 leading-8 text-slate-600">第9回のUI・アプリ設計で、自分たちの画面を作るときの参考にします。グラフを置くのか、色で見せるのか、キャラで返すのかを選びます。</p></div></div></div></section></main><footer class="bg-slate-950 text-slate-300 py-12"><div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-3 gap-8 text-sm"><div><h2 class="text-white font-black text-xl">YARUKI LAB</h2><p class="mt-3 leading-7">KOKUYO「大人のやる気ペン」から始まり、データ・AI・デザインで学習体験をつくる情報IIプロジェクト。</p></div><div><h3 class="text-white font-black">ページ</h3><ul class="mt-3 space-y-2"><li><a class="hover:text-white" href="schedule.html">10コマスケジュール</a></li><li><a class="hover:text-white" href="curriculum.html">情報IIとのつながり</a></li><li><a class="hover:text-white" href="tech-cards.html">カードライブラリ</a></li><li><a class="hover:text-white" href="tech-product-analysis.html">KOKUYO分析カード</a></li></ul></div><div><h3 class="text-white font-black">参考</h3><p class="mt-3 leading-7">昨年度授業資料、文部科学省「高等学校学習指導要領解説 情報編」、KOKUYO公式情報、SSDSE、e-Stat、scikit-learn公式ドキュメント等を参照。</p></div></div></footer><script>if(window.lucide) lucide.createIcons(); if(window.mermaid) mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{primaryColor:'#fff7ed',primaryTextColor:'#0f172a',primaryBorderColor:'#fb7185',lineColor:'#64748b',secondaryColor:'#e0f2fe',tertiaryColor:'#fef3c7'}});</script></body></html>

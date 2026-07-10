@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ja" class="scroll-smooth">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>情報IIとのつながり | YARUKI LAB</title>
+<meta name="description" content="情報II・やる気ペン・SchooMy・Polar Pacerを使った、チーム開発型の生徒向けコンセプトサイト。" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Noto Sans JP','Inter','system-ui','sans-serif'] },
+        colors: { ink:'#0f172a', paper:'#fffaf1', melon:'#d9f99d', soda:'#bae6fd', momo:'#ffe4e6', grape:'#ede9fe' },
+        boxShadow: { soft:'0 24px 80px rgba(15,23,42,.12)', sticker:'7px 7px 0 rgba(15,23,42,.10)' }
+      }
+    }
+  }
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
+::selection{background:#fde68a;color:#111827}
+.grid-paper{background-image:linear-gradient(rgba(15,23,42,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(15,23,42,.055) 1px,transparent 1px);background-size:22px 22px}
+.marker{background:linear-gradient(transparent 58%, #fde68a 58%);}
+.pop{transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease}
+.pop:hover{transform:translateY(-5px) rotate(-.2deg);box-shadow:0 22px 70px rgba(15,23,42,.14);border-color:#fb7185}
+.tape::before{content:"";position:absolute;top:-12px;left:28px;width:74px;height:24px;background:rgba(253,186,116,.75);transform:rotate(-4deg);border-radius:4px}
+.bubble{position:relative}
+.bubble:after{content:"";position:absolute;left:34px;bottom:-14px;border-width:14px 12px 0 0;border-style:solid;border-color:white transparent transparent transparent}
+</style>
+</head>
+<body class="bg-paper text-slate-900 font-sans">
+<header class="sticky top-0 z-50 bg-white/85 backdrop-blur border-b border-slate-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3 font-black tracking-tight">
+      <span class="w-10 h-10 rounded-2xl bg-gradient-to-br from-rose-400 via-amber-300 to-sky-400 grid place-items-center text-white shadow-sticker">✦</span>
+      <span>YARUKI LAB</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-6 text-sm font-black text-slate-600">
+      <a class="hover:text-rose-500" href="index.html">TOP</a>
+      <a class="hover:text-rose-500" href="schedule.html">10コマ</a>
+      <a class="hover:text-rose-500" href="curriculum.html">情報IIとのつながり</a>
+      <a class="hover:text-rose-500" href="tech-cards.html">技術カード</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="py-16 md:py-20 grid-paper bg-gradient-to-br from-sky-50 via-white to-violet-50"><div class="max-w-7xl mx-auto px-4 sm:px-6"><p class="font-black text-sky-600 tracking-widest">CURRICULUM MAP</p><h1 class="mt-3 text-4xl md:text-6xl font-black tracking-tight">情報IIの学びが、プロジェクトの中でつながる。</h1><p class="mt-6 max-w-4xl text-lg leading-8 text-slate-600">教科書の内容をバラバラに覚えるのではなく、作りたいものを形にする中で使います。</p></div></section>
+<section class="py-16 bg-white"><div class="max-w-7xl mx-auto px-4 sm:px-6"><div class="rounded-[2rem] bg-slate-950 text-white p-8 md:p-10"><p class="text-amber-300 font-black">情報IIの大きな目標</p><h2 class="text-3xl md:text-4xl font-black mt-3">情報と情報技術を、適切・効果的・創造的に使う。</h2><p class="mt-5 text-slate-300 leading-8">学習指導要領解説では、情報IIの目標として、情報技術を活用して問題の発見・解決を行う学習活動を通して、情報社会に主体的に参画し、その発展に寄与する資質・能力を育成することが示されています。</p></div>
+<div class="mt-10 grid md:grid-cols-5 gap-4"><div class="rounded-3xl bg-rose-50 p-5 border border-rose-100"><div class="text-3xl">🌐</div><h3 class="font-black mt-3">情報社会</h3></div><div class="rounded-3xl bg-amber-50 p-5 border border-amber-100"><div class="text-3xl">🎨</div><h3 class="font-black mt-3">コンテンツ</h3></div><div class="rounded-3xl bg-sky-50 p-5 border border-sky-100"><div class="text-3xl">📊</div><h3 class="font-black mt-3">データ</h3></div><div class="rounded-3xl bg-emerald-50 p-5 border border-emerald-100"><div class="text-3xl">🛠️</div><h3 class="font-black mt-3">システム</h3></div><div class="rounded-3xl bg-violet-50 p-5 border border-violet-100"><div class="text-3xl">🚀</div><h3 class="font-black mt-3">探究</h3></div></div></div></section>
+<section class="py-16 bg-slate-50"><div class="max-w-7xl mx-auto px-4 sm:px-6"><h2 class="text-3xl font-black">学習指導要領との対応表</h2><div class="mt-8 overflow-hidden rounded-3xl border border-slate-200 bg-white"><table class="w-full text-sm"><thead class="bg-slate-900 text-white"><tr><th class="p-4 text-left">情報IIの内容</th><th class="p-4 text-left">このプロジェクトでの活動</th><th class="p-4 text-left">身につく力</th></tr></thead><tbody class="divide-y divide-slate-100"><tr><td class="p-4 font-black">情報社会の進展と情報技術</td><td class="p-4 leading-7">AI、IoT、ウェアラブル、学習データの活用を題材に、情報技術が学習体験をどう変えるか考える。</td><td class="p-4 leading-7">技術を社会や生活の文脈で捉える力</td></tr><tr><td class="p-4 font-black">コミュニケーションとコンテンツ</td><td class="p-4 leading-7">UIプロトタイプ、アイコン、色、メッセージ、ピッチ資料を制作する。</td><td class="p-4 leading-7">目的に合わせて情報を表現し、伝える力</td></tr><tr><td class="p-4 font-black">情報とデータサイエンス</td><td class="p-4 leading-7">センサデータ、心拍、アンケートを集め、可視化・回帰・重回帰・因子分析・クラスタリングなどで読み解く。</td><td class="p-4 leading-7">データから根拠を見つけ、解釈する力</td></tr><tr><td class="p-4 font-black">情報システムとプログラミング</td><td class="p-4 leading-7">SchooMy、LED、ダッシュボード、分析結果の表示を組み合わせる。</td><td class="p-4 leading-7">情報の流れや仕組みを設計する力</td></tr><tr><td class="p-4 font-black">情報と情報技術を活用した問題発見・解決の探究</td><td class="p-4 leading-7">チームごとにテーマを設定し、必要な技術を選びながらプロダクトを開発する。</td><td class="p-4 leading-7">自分たちの問いから新しい価値をつくる力</td></tr></tbody></table></div></div></section>
+<section class="py-16 bg-white"><div class="max-w-7xl mx-auto px-4 sm:px-6"><h2 class="text-3xl font-black">今回のポイント</h2><div class="mt-8 grid md:grid-cols-3 gap-5"><div class="rounded-3xl bg-rose-50 p-6 border border-rose-100"><h3 class="font-black text-xl">自分たちのテーマ</h3><p class="mt-3 text-sm leading-7 text-slate-600">6コマ目からは各チームがテーマを設定します。</p></div><div class="rounded-3xl bg-sky-50 p-6 border border-sky-100"><h3 class="font-black text-xl">データの根拠</h3><p class="mt-3 text-sm leading-7 text-slate-600">センサ、アンケート、観察記録から説明できる材料を作ります。</p></div><div class="rounded-3xl bg-emerald-50 p-6 border border-emerald-100"><h3 class="font-black text-xl">使う人に届く形</h3><p class="mt-3 text-sm leading-7 text-slate-600">UI、メッセージ、発表資料まで含めてプロダクトとして表現します。</p></div></div></div></section>
+<section class="py-16 bg-white"><div class="max-w-7xl mx-auto px-4 sm:px-6"><p class="text-rose-500 font-black tracking-widest">KOKUYO × INFO II</p><h2 class="mt-3 text-3xl md:text-5xl font-black">企業プロダクトを読み解くことも、情報IIの学び。</h2><p class="mt-5 text-slate-600 leading-8 max-w-4xl">大人のやる気ペンを、センサ・データ・アプリ・UI・継続の仕掛けが組み合わさった情報システムとして観察します。その上で、自分たちのプロダクトを考えることで、データサイエンス、情報システム、コンテンツ、探究がつながります。</p></div></section></main>
+
+<footer class="bg-slate-950 text-slate-300 py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-3 gap-8 text-sm">
+    <div><h2 class="text-white font-black text-xl">YARUKI LAB</h2><p class="mt-3 leading-7">やる気をテーマに、データ・AI・デザインで学習体験をつくる情報IIプロジェクト。</p></div>
+    <div><h3 class="text-white font-black">ページ</h3><ul class="mt-3 space-y-2"><li><a class="hover:text-white" href="schedule.html">10コマスケジュール</a></li><li><a class="hover:text-white" href="curriculum.html">情報IIとのつながり</a></li><li><a class="hover:text-white" href="tech-cards.html">技術カード</a></li></ul></div>
+    <div><h3 class="text-white font-black">メモ</h3><p class="mt-3 leading-7">文部科学省「高等学校学習指導要領解説 情報編」と、昨年度授業資料をもとに構成。</p></div>
+  </div>
+</footer>
+<script>lucide.createIcons();</script>
+</body></html>

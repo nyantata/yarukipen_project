@@ -1,0 +1,91 @@
+<!doctype html><html lang="ja" class="scroll-smooth"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>YARUKI LAB | KOKUYOから始まる情報IIプロジェクト</title><meta name="description" content="YARUKI LAB 情報IIプロジェクト"/><script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Noto Sans JP','Inter','system-ui','sans-serif'] },
+        colors: { ink:'#0f172a', paper:'#fffaf1', melon:'#d9f99d', soda:'#bae6fd', momo:'#ffe4e6', grape:'#ede9fe', banana:'#fef3c7' },
+        boxShadow: { soft:'0 24px 80px rgba(15,23,42,.12)', sticker:'7px 7px 0 rgba(15,23,42,.10)' }
+      }
+    }
+  }
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
+::selection{background:#fde68a;color:#111827}
+.grid-paper{background-image:linear-gradient(rgba(15,23,42,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(15,23,42,.055) 1px,transparent 1px);background-size:22px 22px}
+.marker{background:linear-gradient(transparent 58%, #fde68a 58%);}
+.pop{transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease}
+.pop:hover{transform:translateY(-5px) rotate(-.2deg);box-shadow:0 22px 70px rgba(15,23,42,.14);border-color:#fb7185}
+.tape::before{content:"";position:absolute;top:-12px;left:28px;width:74px;height:24px;background:rgba(253,186,116,.75);transform:rotate(-4deg);border-radius:4px}
+.bubble{position:relative}.bubble:after{content:"";position:absolute;left:34px;bottom:-14px;border-width:14px 12px 0 0;border-style:solid;border-color:white transparent transparent transparent}
+.codebox pre{white-space:pre-wrap;word-break:break-word}.card-gradient{background:radial-gradient(circle at top left, rgba(251,113,133,.18), transparent 34%), radial-gradient(circle at bottom right, rgba(14,165,233,.18), transparent 32%), #fff}.mermaid svg{max-width:100%;height:auto}
+.noise{background-image:radial-gradient(rgba(15,23,42,.08) 1px, transparent 1px);background-size:18px 18px}
+</style></head><body class="bg-paper text-slate-900 font-sans"><header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100"><div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between"><a href="index.html" class="flex items-center gap-3 font-black tracking-tight"><span class="w-10 h-10 rounded-2xl bg-gradient-to-br from-rose-400 via-amber-300 to-sky-400 grid place-items-center text-white shadow-sticker">✦</span><span>YARUKI LAB</span></a><nav class="hidden md:flex items-center gap-6 text-sm font-black text-slate-600"><a class="hover:text-rose-500" href="index.html">TOP</a><a class="hover:text-rose-500" href="schedule.html">10コマ</a><a class="hover:text-rose-500" href="curriculum.html">情報II</a><a class="hover:text-rose-500" href="tech-cards.html">カード</a><a class="hover:text-rose-500" href="tech-product-analysis.html">KOKUYO分析</a></nav></div></header><main>
+<section class="relative overflow-hidden grid-paper bg-gradient-to-br from-rose-50 via-amber-50 to-sky-50 py-16 md:py-24">
+  <div class="absolute -top-20 -left-16 w-72 h-72 bg-rose-300/40 rounded-full blur-3xl"></div><div class="absolute bottom-0 -right-20 w-96 h-96 bg-sky-300/40 rounded-full blur-3xl"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 relative grid lg:grid-cols-[1.05fr_.95fr] gap-12 items-center">
+    <div>
+      <div class="inline-flex items-center gap-2 rounded-full bg-white/85 border border-rose-100 px-4 py-2 text-sm font-black text-rose-600 shadow-sm mb-6"><i data-lucide="sparkles" class="w-4 h-4"></i> KOKUYOのプロダクトからはじまる。</div>
+      <h1 class="text-5xl sm:text-6xl md:text-8xl font-black tracking-tight leading-[1.02]">YARUKI<br><span class="marker">LAB</span></h1>
+      <p class="mt-6 text-xl md:text-2xl font-black leading-10 text-slate-800 max-w-3xl">やる気ペンを体験し、アプリを観察し、企業が考えた「続けたくなる仕掛け」を読み解く。そこから、自分たちの学習サポートプロダクトをつくる。</p>
+      <p class="mt-5 text-slate-600 leading-8 max-w-2xl">センサ、Google Colab、回帰分析、クラスタリング、決定木、UI/UX、AI。必要になった技術はカードから取りに行く。</p>
+      <div class="mt-8 flex flex-wrap gap-3"><a href="schedule.html" class="rounded-2xl bg-slate-950 text-white px-6 py-4 font-black hover:bg-rose-500 transition inline-flex gap-2 items-center">10コマを見る <i data-lucide="arrow-right" class="w-5 h-5"></i></a><a href="tech-cards.html" class="rounded-2xl bg-white border border-slate-200 px-6 py-4 font-black hover:border-rose-300 transition">カードライブラリへ</a></div>
+    </div>
+    <div class="relative"><div class="absolute inset-0 bg-white rounded-[2.5rem] rotate-3 shadow-sticker"></div><div class="relative rounded-[2.5rem] overflow-hidden bg-white shadow-soft border border-white p-3"><img src="assets/kokuyo_product_design.png" alt="プロダクトデザインのイメージ" class="w-full h-[470px] object-cover rounded-[2rem]"><div class="absolute left-7 bottom-7 right-7 rounded-3xl bg-white/90 backdrop-blur p-5 border border-white shadow-soft"><p class="text-xs font-black text-rose-500 tracking-widest">PRODUCT → DATA → APP → PITCH</p><h2 class="text-2xl font-black mt-1">体験を分解して、再設計する。</h2></div></div></div>
+  </div>
+</section>
+
+<section class="py-18 md:py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="grid lg:grid-cols-[.9fr_1.1fr] gap-10 items-start">
+      <div><p class="text-rose-500 font-black tracking-widest">WHY KOKUYO?</p><h2 class="mt-3 text-4xl md:text-5xl font-black tracking-tight">やる気ペンを、<br>教材ではなく「先行プロダクト」として見る。</h2><p class="mt-6 text-lg leading-9 text-slate-600">大人のやる気ペンには、ペンの動き、光の変化、アプリの記録、キャラクター、グラフ、継続の仕掛けが入っています。生徒はそれを使いながら、企業が「やる気」をどうプロダクトにしたのかを読み解きます。</p></div>
+      <div class="grid sm:grid-cols-3 gap-5">
+        <div class="pop rounded-3xl bg-rose-50 border border-rose-100 p-6"><div class="text-4xl">①</div><h3 class="text-xl font-black mt-4">体験する</h3><p class="mt-3 text-sm leading-7 text-slate-600">配付されたやる気ペンを使い、LEDやアプリの反応を観察する。</p></div>
+        <div class="pop rounded-3xl bg-amber-50 border border-amber-100 p-6"><div class="text-4xl">②</div><h3 class="text-xl font-black mt-4">分解する</h3><p class="mt-3 text-sm leading-7 text-slate-600">どんなデータを、どんな表現で返しているかを分析する。</p></div>
+        <div class="pop rounded-3xl bg-sky-50 border border-sky-100 p-6"><div class="text-4xl">③</div><h3 class="text-xl font-black mt-4">再設計する</h3><p class="mt-3 text-sm leading-7 text-slate-600">高校生ならどんな学習サポートに広げられるか考える。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 bg-slate-950 text-white relative overflow-hidden">
+  <div class="absolute inset-0 opacity-25" style="background:radial-gradient(circle at 20% 20%,#fb7185 0,transparent 28%),radial-gradient(circle at 80% 40%,#38bdf8 0,transparent 32%),radial-gradient(circle at 40% 100%,#84cc16 0,transparent 28%)"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 relative grid lg:grid-cols-[.8fr_1.2fr] gap-10 items-start">
+    <div><p class="text-amber-300 font-black tracking-widest">10 LESSONS</p><h2 class="text-4xl md:text-5xl font-black mt-3">共通体験から、チーム開発へ。</h2><p class="mt-5 text-slate-300 leading-8">1〜5コマで共通の武器を試し、6〜10コマでチームごとにテーマを決めて動きます。テーマは先生が配るのではなく、各チームが育てます。</p><a href="schedule.html" class="mt-7 inline-flex gap-2 items-center rounded-2xl bg-white text-slate-950 px-6 py-4 font-black hover:bg-amber-200">スケジュール詳細へ <i data-lucide="arrow-right" class="w-5 h-5"></i></a></div>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <div class="rounded-3xl bg-white/10 border border-white/10 p-6"><p class="text-3xl font-black text-rose-300">1-5</p><h3 class="text-xl font-black mt-2">共通ハンズオン</h3><p class="text-slate-300 leading-7 mt-3">やる気ペン体験、センサ取得、Colab、回帰、クラスタリング、決定木を試す。</p></div>
+      <div class="rounded-3xl bg-white/10 border border-white/10 p-6"><p class="text-3xl font-black text-sky-300">6-10</p><h3 class="text-xl font-black mt-2">自走開発</h3><p class="text-slate-300 leading-7 mt-3">テーマ設定、データ取得、分析・検証、UI/アプリ設計、KOKUYOへの提案。</p></div>
+      <div class="rounded-3xl bg-white/10 border border-white/10 p-6"><p class="text-3xl font-black text-amber-300">CARD</p><h3 class="text-xl font-black mt-2">技術カード</h3><p class="text-slate-300 leading-7 mt-3">必要な分析や開発方法を、自分たちで選ぶ。</p></div>
+      <div class="rounded-3xl bg-white/10 border border-white/10 p-6"><p class="text-3xl font-black text-emerald-300">LOG</p><h3 class="text-xl font-black mt-2">開発ログ</h3><p class="text-slate-300 leading-7 mt-3">毎回の進み方、AI利用、次回やることを短く残す。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6"><div><p class="text-violet-600 font-black tracking-widest">CARD LIBRARY</p><h2 class="text-4xl md:text-5xl font-black mt-3">カードは、チームの道具箱。</h2><p class="mt-5 text-slate-600 leading-8 max-w-3xl">KOKUYOを読み解くカード、データ分析カード、AI/機械学習カード、UIカード、検証カードを使い分けます。</p></div><a href="tech-cards.html" class="rounded-2xl bg-violet-600 text-white px-6 py-4 font-black hover:bg-violet-700 transition">カードを見る</a></div>
+    <div class="mt-10 grid md:grid-cols-4 gap-5">
+      <div class="pop rounded-3xl bg-rose-50 border border-rose-100 p-6"><h3 class="font-black text-xl">KOKUYO分析</h3><p class="mt-3 text-slate-600 leading-7 text-sm">製品・アプリ・続ける仕掛けを観察する。</p></div>
+      <div class="pop rounded-3xl bg-sky-50 border border-sky-100 p-6"><h3 class="font-black text-xl">データ分析</h3><p class="mt-3 text-slate-600 leading-7 text-sm">可視化、回帰、重回帰、因子分析。</p></div>
+      <div class="pop rounded-3xl bg-amber-50 border border-amber-100 p-6"><h3 class="font-black text-xl">AI・分類</h3><p class="mt-3 text-slate-600 leading-7 text-sm">k-means、k近傍法、決定木、生成AI。</p></div>
+      <div class="pop rounded-3xl bg-emerald-50 border border-emerald-100 p-6"><h3 class="font-black text-xl">検証・発表</h3><p class="mt-3 text-slate-600 leading-7 text-sm">言えること／まだ言えないことを整理する。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-[.9fr_1.1fr] gap-10 items-start">
+    <div><p class="text-emerald-600 font-black tracking-widest">INFO II</p><h2 class="text-4xl md:text-5xl font-black mt-3">これは、情報IIの学び。</h2><p class="mt-5 text-slate-600 leading-8">企業プロダクトの観察、センサデータ取得、データサイエンス、情報システム、UI/コンテンツ、探究を1つのプロジェクトでつなげます。</p><a href="curriculum.html" class="mt-6 inline-flex gap-2 items-center rounded-2xl bg-slate-950 text-white px-6 py-4 font-black hover:bg-emerald-600">情報IIとのつながりへ <i data-lucide="arrow-right" class="w-5 h-5"></i></a></div>
+    <div class="grid sm:grid-cols-2 gap-5">
+      <div class="rounded-3xl bg-white p-6 shadow-sm"><div class="text-3xl">📊</div><h3 class="font-black text-xl mt-3">情報とデータサイエンス</h3><p class="mt-2 text-sm leading-7 text-slate-600">回帰、クラスタリング、決定木、検証。</p></div>
+      <div class="rounded-3xl bg-white p-6 shadow-sm"><div class="text-3xl">🛠️</div><h3 class="font-black text-xl mt-3">情報システムとプログラミング</h3><p class="mt-2 text-sm leading-7 text-slate-600">SchooMy、センサ、判定、アプリ設計。</p></div>
+      <div class="rounded-3xl bg-white p-6 shadow-sm"><div class="text-3xl">🎨</div><h3 class="font-black text-xl mt-3">コミュニケーションとコンテンツ</h3><p class="mt-2 text-sm leading-7 text-slate-600">UI、グラフ、キャラクター、画面表現。</p></div>
+      <div class="rounded-3xl bg-white p-6 shadow-sm"><div class="text-3xl">🚀</div><h3 class="font-black text-xl mt-3">問題発見・解決の探究</h3><p class="mt-2 text-sm leading-7 text-slate-600">チームテーマを、KOKUYOへの提案まで育てる。</p></div>
+    </div>
+  </div>
+</section>
+</main><footer class="bg-slate-950 text-slate-300 py-12"><div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-3 gap-8 text-sm"><div><h2 class="text-white font-black text-xl">YARUKI LAB</h2><p class="mt-3 leading-7">KOKUYO「大人のやる気ペン」から始まり、データ・AI・デザインで学習体験をつくる情報IIプロジェクト。</p></div><div><h3 class="text-white font-black">ページ</h3><ul class="mt-3 space-y-2"><li><a class="hover:text-white" href="schedule.html">10コマスケジュール</a></li><li><a class="hover:text-white" href="curriculum.html">情報IIとのつながり</a></li><li><a class="hover:text-white" href="tech-cards.html">カードライブラリ</a></li><li><a class="hover:text-white" href="tech-product-analysis.html">KOKUYO分析カード</a></li></ul></div><div><h3 class="text-white font-black">参考</h3><p class="mt-3 leading-7">昨年度授業資料、文部科学省「高等学校学習指導要領解説 情報編」、KOKUYO公式情報、SSDSE、e-Stat、scikit-learn公式ドキュメント等を参照。</p></div></div></footer><script>if(window.lucide) lucide.createIcons(); if(window.mermaid) mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{primaryColor:'#fff7ed',primaryTextColor:'#0f172a',primaryBorderColor:'#fb7185',lineColor:'#64748b',secondaryColor:'#e0f2fe',tertiaryColor:'#fef3c7'}});</script></body></html>

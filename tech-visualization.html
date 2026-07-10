@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ja" class="scroll-smooth">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>可視化カード | YARUKI LAB</title>
+<meta name="description" content="YARUKI LAB 情報IIプロジェクト 技術カード" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Noto Sans JP','Inter','system-ui','sans-serif'] },
+        colors: { ink:'#0f172a', paper:'#fffaf1', melon:'#d9f99d', soda:'#bae6fd', momo:'#ffe4e6', grape:'#ede9fe', banana:'#fef3c7' },
+        boxShadow: { soft:'0 24px 80px rgba(15,23,42,.12)', sticker:'7px 7px 0 rgba(15,23,42,.10)' }
+      }
+    }
+  }
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
+::selection{background:#fde68a;color:#111827}
+.grid-paper{background-image:linear-gradient(rgba(15,23,42,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(15,23,42,.055) 1px,transparent 1px);background-size:22px 22px}
+.marker{background:linear-gradient(transparent 58%, #fde68a 58%);}
+.pop{transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease}
+.pop:hover{transform:translateY(-5px) rotate(-.2deg);box-shadow:0 22px 70px rgba(15,23,42,.14);border-color:#fb7185}
+.tape::before{content:"";position:absolute;top:-12px;left:28px;width:74px;height:24px;background:rgba(253,186,116,.75);transform:rotate(-4deg);border-radius:4px}
+.codebox pre{white-space:pre-wrap; word-break:break-word;}
+.card-gradient{background:radial-gradient(circle at top left, rgba(251,113,133,.18), transparent 34%), radial-gradient(circle at bottom right, rgba(14,165,233,.18), transparent 32%), #fff;}
+.mermaid svg{max-width:100%;height:auto;}
+</style>
+</head>
+<body class="bg-paper text-slate-900 font-sans">
+<header class="sticky top-0 z-50 bg-white/85 backdrop-blur border-b border-slate-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3 font-black tracking-tight">
+      <span class="w-10 h-10 rounded-2xl bg-gradient-to-br from-rose-400 via-amber-300 to-sky-400 grid place-items-center text-white shadow-sticker">✦</span>
+      <span>YARUKI LAB</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-6 text-sm font-black text-slate-600">
+      <a class="hover:text-rose-500" href="index.html">TOP</a>
+      <a class="hover:text-rose-500" href="schedule.html">10コマ</a>
+      <a class="hover:text-rose-500" href="curriculum.html">情報IIとのつながり</a>
+      <a class="hover:text-rose-500" href="tech-cards.html">技術カード</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="py-16 md:py-20 grid-paper bg-gradient-to-br from-sky-50 via-white to-amber-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <a href="tech-cards.html" class="inline-flex text-sm font-black text-slate-500 hover:text-rose-500">← 技術カード一覧へ</a>
+    <div class="mt-6 flex flex-col md:flex-row md:items-end gap-5">
+      <div class="text-7xl">📊</div>
+      <div>
+        <p class="font-black text-rose-500 tracking-widest">TECH CARD / LAB NOTE</p>
+        <h1 class="mt-2 text-4xl md:text-6xl font-black tracking-tight">可視化カード</h1>
+        <p class="mt-4 text-xl md:text-2xl font-black text-slate-700">数字の表を、発見できる形に変える</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="py-14 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-[.9fr_1.1fr] gap-8">
+    <aside class="rounded-[2rem] bg-slate-950 text-white p-8 shadow-soft">
+      <h2 class="text-2xl font-black">このカードの出番</h2>
+      <ul class="mt-5 space-y-3 text-slate-200 font-bold">
+        <li class="flex gap-3"><span class="text-amber-300">●</span><span>データの傾向を最初に確認したい</span></li><li class="flex gap-3"><span class="text-amber-300">●</span><span>センサ値と集中度の関係を見たい</span></li><li class="flex gap-3"><span class="text-amber-300">●</span><span>発表で結果をわかりやすく伝えたい</span></li>
+      </ul>
+      <h3 class="font-black text-amber-300 mt-8">作れるもの</h3>
+      <div class="mt-4 flex flex-wrap gap-2">
+        <span class="rounded-full bg-white/10 px-3 py-2 text-sm font-black">折れ線グラフ</span><span class="rounded-full bg-white/10 px-3 py-2 text-sm font-black">散布図</span><span class="rounded-full bg-white/10 px-3 py-2 text-sm font-black">箱ひげ図</span><span class="rounded-full bg-white/10 px-3 py-2 text-sm font-black">ヒストグラム</span>
+      </div>
+    </aside>
+    <div class="rounded-[2rem] card-gradient border border-slate-100 p-8 shadow-soft">
+      <h2 class="text-3xl font-black">ざっくり言うと</h2>
+      <p class="mt-5 text-lg leading-9 text-slate-700">平均や標準偏差だけでは見えない「変化」「関係」「ばらつき」を、グラフで見えるようにします。まずは可視化。AIにかける前に、人間がデータを観察します。</p>
+      <div class="mt-6 rounded-3xl bg-amber-100/70 border border-amber-200 p-5">
+        <p class="font-black">合言葉</p>
+        <p class="mt-2 text-xl font-black">「数字の表を、発見できる形に変える」</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="py-12 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-8">
+    <div class="rounded-[2rem] bg-white border border-slate-100 p-6 shadow-sm"><h3 class="font-black text-xl mb-4">イメージ図</h3><canvas id="chart_visualization" height="220"></canvas></div>
+    <div class="rounded-[2rem] bg-white border border-slate-100 p-6 shadow-sm"><h3 class="font-black text-xl mb-4">流れを図で見る</h3><div class="mermaid">flowchart LR
+A[CSVを読む] --&gt; B[代表値を見る]
+B --&gt; C[折れ線で時間変化]
+B --&gt; D[散布図で関係]
+B --&gt; E[箱ひげ図でばらつき]
+C --&gt; F[発見をメモ]
+D --&gt; F
+E --&gt; F</div></div>
+  </div>
+</section>
+<section class="py-14 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex items-end justify-between gap-4 flex-wrap"><div><p class="font-black text-rose-500 tracking-widest">HOW TO USE</p><h2 class="text-3xl md:text-4xl font-black mt-2">使い方はこの順番</h2></div></div>
+    <div class="mt-8"><div class="grid md:grid-cols-2 gap-4"><div class="rounded-3xl bg-white border border-slate-100 p-5 shadow-sm"><div class="w-10 h-10 rounded-2xl bg-amber-200 grid place-items-center font-black">1</div><p class="mt-3 font-bold leading-7 text-slate-700">CSVをColabに読み込む</p></div><div class="rounded-3xl bg-white border border-slate-100 p-5 shadow-sm"><div class="w-10 h-10 rounded-2xl bg-amber-200 grid place-items-center font-black">2</div><p class="mt-3 font-bold leading-7 text-slate-700">平均・最大・最小・標準偏差を確認する</p></div><div class="rounded-3xl bg-white border border-slate-100 p-5 shadow-sm"><div class="w-10 h-10 rounded-2xl bg-amber-200 grid place-items-center font-black">3</div><p class="mt-3 font-bold leading-7 text-slate-700">目的に合うグラフを選ぶ</p></div><div class="rounded-3xl bg-white border border-slate-100 p-5 shadow-sm"><div class="w-10 h-10 rounded-2xl bg-amber-200 grid place-items-center font-black">4</div><p class="mt-3 font-bold leading-7 text-slate-700">グラフから言えることと言えないことを分ける</p></div></div></div>
+  </div>
+</section>
+<section class="py-14 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-[1.05fr_.95fr] gap-8">
+    <div>
+      <p class="font-black text-sky-500 tracking-widest">COLAB PRACTICE</p>
+      <h2 class="text-3xl md:text-4xl font-black mt-2">Pythonで試してみる</h2>
+      <p class="mt-4 leading-8 text-slate-600">Google Colabに貼り付けて動かせる練習コードです。まずはそのまま動かし、次に自分たちの列名に置き換えます。</p>
+      <div class="codebox mt-4 rounded-3xl overflow-hidden border border-slate-800 bg-slate-950 shadow-soft">
+      <div class="flex items-center justify-between px-5 py-3 bg-slate-900 text-slate-300 text-xs font-black tracking-widest"><span>COLAB / PYTHON</span><span>コピーして試せる</span></div>
+      <pre class="p-5 text-sm leading-7 text-slate-100 overflow-x-auto"><code># まずはIrisデータで可視化の練習
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.datasets import load_iris
+
+iris = load_iris(as_frame=True)
+df = iris.frame
+
+display(df.head())
+print(df.describe())
+
+# 散布図：花びらの長さと幅の関係
+plt.figure(figsize=(6,4))
+plt.scatter(df[&#x27;petal length (cm)&#x27;], df[&#x27;petal width (cm)&#x27;])
+plt.xlabel(&#x27;petal length (cm)&#x27;)
+plt.ylabel(&#x27;petal width (cm)&#x27;)
+plt.title(&#x27;Iris scatter plot&#x27;)
+plt.show()
+
+# ヒストグラム：がく片の長さの分布
+plt.figure(figsize=(6,4))
+plt.hist(df[&#x27;sepal length (cm)&#x27;], bins=10)
+plt.xlabel(&#x27;sepal length (cm)&#x27;)
+plt.ylabel(&#x27;count&#x27;)
+plt.title(&#x27;Distribution&#x27;)
+plt.show()</code></pre>
+    </div>
+    </div>
+    <div class="rounded-[2rem] bg-gradient-to-br from-amber-50 to-rose-50 border border-amber-100 p-8 shadow-soft">
+      <p class="font-black text-amber-600 tracking-widest">OPEN DATA MISSION</p>
+      <h2 class="text-3xl font-black mt-2">オープンデータ演習</h2>
+      <p class="mt-5 leading-8 text-slate-700 font-bold">SSDSE-基本素材（SSDSE-E）をダウンロードし、都道府県ごとの人口・教育・医療・経済などから2つの列を選び、散布図を作る。グラフから「関係がありそう」「なさそう」を1文で説明する。</p>
+      <div class="mt-6 rounded-3xl bg-white p-5 border border-slate-100"><h3 class="font-black">YARUKI LABで使うなら</h3><p class="mt-3 leading-8 text-slate-600">YARUKI LABでは、心拍・振動・照度・音・主観スコアなどをグラフにして、プロダクトの根拠を探します。</p></div>
+      <div class="mt-10 rounded-3xl bg-slate-50 border border-slate-100 p-6 text-sm leading-7 text-slate-600"><h3 class="font-black text-slate-900 text-lg">オープンデータの入口</h3><ul class="mt-3 list-disc pl-5 space-y-1"><li><a class="font-bold text-sky-700 underline" href="https://www.nstac.go.jp/use/literacy/ssdse/" target="_blank">SSDSE（教育用標準データセット）</a>：都道府県・市区町村などの公的統計をCSV/Excelで利用できます。</li><li><a class="font-bold text-sky-700 underline" href="https://www.e-stat.go.jp/" target="_blank">e-Stat</a>：政府統計の総合窓口。CSVダウンロードやAPI利用ができます。</li><li><a class="font-bold text-sky-700 underline" href="https://scikit-learn.org/stable/datasets.html" target="_blank">scikit-learn datasets</a>：Irisなどの練習用データセットをColabですぐ使えます。</li></ul></div>
+    </div>
+  </div>
+</section>
+</main>
+<script>new Chart(document.getElementById('chart_visualization'), {type:'line', data:{labels:["0分", "5分", "10分", "15分", "20分", "25分"], datasets:[{"label": "振動回数", "data": [5, 12, 18, 15, 8, 4], "tension": 0.35, "borderWidth": 3, "pointRadius": 4}, {"label": "心拍", "data": [76, 78, 82, 81, 79, 75], "tension": 0.35, "borderWidth": 3, "pointRadius": 4}]}, options:{responsive:true, plugins:{legend:{position:'bottom'}}, scales:{y:{beginAtZero:true}}} });</script>
+<footer class="bg-slate-950 text-slate-300 py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-3 gap-8 text-sm">
+    <div><h2 class="text-white font-black text-xl">YARUKI LAB</h2><p class="mt-3 leading-7">つくりたいから、学ぶ。センサ・データ・AI・デザインで学習体験をつくる情報IIプロジェクト。</p></div>
+    <div><h3 class="text-white font-black">ページ</h3><ul class="mt-3 space-y-2"><li><a class="hover:text-white" href="schedule.html">10コマスケジュール</a></li><li><a class="hover:text-white" href="curriculum.html">情報IIとのつながり</a></li><li><a class="hover:text-white" href="tech-cards.html">技術カード</a></li></ul></div>
+    <div><h3 class="text-white font-black">参考</h3><p class="mt-3 leading-7">文部科学省「高等学校学習指導要領解説 情報編」、情報II教員研修教材、統計センターSSDSE、e-Stat、scikit-learn公式ドキュメントを参照。</p></div>
+  </div>
+</footer>
+<script>
+  if(window.lucide) lucide.createIcons();
+  if(window.mermaid) mermaid.initialize({ startOnLoad: true, theme: 'base', themeVariables: { primaryColor: '#fff7ed', primaryTextColor: '#0f172a', primaryBorderColor: '#fb7185', lineColor: '#64748b', secondaryColor: '#e0f2fe', tertiaryColor: '#fef3c7' }});
+</script>
+</body></html>
